@@ -394,3 +394,47 @@ margin-bottom : -30px;
   box-shadow: 0 10px 22px rgba(0,0,0,0.18);
 }
 .nav .glass:focus-visible { outline: none; }
+
+
+/* ===== MOBILE TUNE-UP (<= 640px) ===== */
+@media (max-width: 640px){
+
+  /* smaller navbar + safe-area padding for iOS/Instagram browser */
+  :root{ --nav-h: 88px; }
+  .nav{
+    padding-left:  max(12px, env(safe-area-inset-left));
+    padding-right: max(12px, env(safe-area-inset-right));
+  }
+  .logo img{ height: calc(var(--nav-h) - 18px); }
+
+  /* make PRE ORDER comfy on phones */
+  .nav .iridescent{
+    margin-left: auto;
+    height: 36px;
+    font-size: 14px;
+    padding: 0 14px;
+    border-radius: 9999px;
+  }
+
+  /* hero spacing + single column */
+  .hero{ padding: calc(var(--nav-h) + 24px) 16px 32px; }
+  .grid{ grid-template-columns: 1fr; gap: 20px; }
+  .title{ font-size: clamp(36px, 16vw, 56px); }
+  .subtitle{ font-size: 15px; max-width: 32ch; }
+
+  /* hide heavy decorative layers on small screens */
+  .sphere-1, .sphere-3, .grid-overlay, .noise-overlay{ display: none; }
+
+  /* bottom pink band – sized for mobile */
+  .hero::after{
+    width: 180vw;
+    height: 42vh;
+    background: radial-gradient(
+      100vw 50vh at 50% 115%,
+      rgba(223, 87, 180, 0.9),
+      rgba(214, 130, 214, 0.6) 45%,
+      transparent 80%
+    );
+    filter: blur(32px);
+  }
+}
