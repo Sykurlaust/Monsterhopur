@@ -1,20 +1,15 @@
-
 /* ========== STYLES.CSS ========== */
+/* 0) CSS VARIABLES */
 :root{
   --nav-h: 120px;
   --bg: #ffffff;
   --text: #111111;
   --muted: #666666;
   --outline: #00000022;
-
-  /* This is the pink you want */
   --accent: linear-gradient(240deg, rgba(255,0,174,.8), rgba(223,48,229,.4));
 }
 
-
 /* ========== 1) RESET ========== */
-
-
 * { box-sizing: border-box; }
 html, body { height: 100%; }
 body{
@@ -34,8 +29,7 @@ body{
   display: flex; align-items: center; justify-content: center;
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0.65), rgba(179, 84, 164, 0));
   backdrop-filter: saturate(130%) blur(6px);
-  padding:  0 20px;
-
+  padding: 0 20px;
 }
 .nav .inner{
   max-width: 1200px; width: 100%;
@@ -44,18 +38,14 @@ body{
 
 /* Logo */
 .logo{ display: inline-flex; align-items: center; height: var(--nav-h); text-decoration: none; }
-
-
-
-/* You already have this for phones: */
-@media (max-width: 640px){
-  :root{ --nav-h: 100px; }
+.logo img{
+  display: block;
+  width: auto;
+  height: calc(var(--nav-h) - 8px);
+  object-fit: contain;
 }
 
-
-
-
-/* Menu + Cart (dark text for light nav) */
+/* Menu + cart [if used] */
 .menu{ list-style: none; display: flex; gap: 28px; padding: 0; margin: 0; }
 .menu a{ color: #111; text-decoration: none; font-weight: 500; opacity: .9; }
 .menu a:hover{ opacity: 1; }
@@ -66,34 +56,120 @@ body{
   display: grid; place-items: center;
   border: 1px solid var(--outline);
   border-radius: 8px; padding: 3px;
-  color: #000000;
+  color: #000;
 }
 .cart svg{ width: 18px; height: 18px; display: block; }
+
+/* CTA button in nav */
+.nav .iridescent{
+  margin-left: auto;
+  font-family: "Amaranth", sans-serif;
+  font-size: clamp(14px, 1.6vw, 18px);
+  min-width: 9.5em;
+  height: 44px;
+  padding: 0 1.25em;
+  line-height: 1;
+  border-radius: 9999px;
+  border: max(2px, 0.15em) solid transparent;
+  color: #3c5a80;
+  background:
+    linear-gradient(to bottom, oklch(0.95 0.01 257), oklch(0.92 0.0175 257 / 80%) 33%, oklch(0.99 0.01 257 / 80%)) padding-box,
+    linear-gradient(165deg, oklch(0.94 0.025 257 / 80%) 25%, oklch(0.99 0.01 257 / 80%)) border-box;
+  box-shadow:
+    inset -0.35em -0.35em 0.25em -0.25em oklch(0.99 0.02 257),
+    inset -0.33em -1em 0.75em -0.75em oklch(0.99 0.01 257),
+    oklch(0.35 0.1 257 / 0.12) 0px 4px 0.3em 0px,
+    oklch(0.35 0.1 257 / 0.12) 0px 0.18em 0.18em 0px,
+    oklch(0.35 0.1 257 / 0.1)  0px 0.05em 0.1em  0px;
+  position: relative;
+  display: inline-flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  outline: none;
+  transition: box-shadow .3s ease, transform .2s ease, filter .2s ease;
+}
+.nav a.iridescent { text-decoration: none; }
+.iridescent .drop-shadow{
+  content:"";
+  position: absolute; inset: -2px; border-radius: inherit; pointer-events: none; z-index: -2;
+  box-shadow:
+    oklch(0.35 0.1 257 / 0.12) 0px 4px 0.3em 0px,
+    oklch(0.35 0.1 257 / 0.12) 0px 0.18em 0.18em 0px,
+    oklch(0.35 0.1 257 / 0.1)  0px 0.05em 0.1em  0px;
+}
+.iridescent::after{
+  content:""; position:absolute; inset: -2px; border-radius: inherit; opacity: .3; background: transparent;
+  box-shadow:
+    inset 0 -0.3em 2px 1px oklch(0.99 0.01 257),
+    inset 0 -0.3em 0.25em oklch(0.99 0.01 257),
+    inset 0 -0.3em 0.5em oklch(0.99 0.01 257),
+    inset 0 -0.3em 0.75em oklch(0.99 0.01 257),
+    inset 0 -0.3em 1em oklch(0.99 0.01 257);
+  mix-blend-mode: lighten; z-index: 2; transition: opacity .6s ease;
+}
+.iridescent::before{
+  content:""; position:absolute; inset: -2px; border-radius: inherit; opacity: 0;
+  transform: translate(1.1em, -0.1em) scale(.8);
+  background: linear-gradient(
+    98deg in oklab,
+    oklch(97% 0.26 10 / 0%) -5%,
+    oklch(97% 0.26 10) 55%,
+    oklch(100% 0.18 55) 62%,
+    oklch(93% 0.15 138) 66%,
+    oklch(96% 0.18 245) 76%,
+    oklch(100% 0.25 275) 120%
+  );
+  -webkit-mask: linear-gradient(166deg, transparent 60%, black);
+          mask: linear-gradient(166deg, transparent 60%, black);
+  filter: blur(3px) brightness(1) contrast(1.3);
+  box-shadow:
+    inset 0 -2px 0 2px oklch(0.99 0.01 257 / 20%),
+    inset 0 -0.25em 0.25em 0.125em oklch(0.99 0.01 257 / 40%);
+  z-index: 3; transition: opacity .6s ease, transform .6s ease, scale .6s ease;
+}
+.iridescent:hover,
+.iridescent:focus-visible,
+.iridescent.shine{
+  transform: translateY(-1px);
+  filter: brightness(1.02);
+}
+.iridescent:hover::before,
+.iridescent:focus-visible::before,
+.iridescent.shine::before{ opacity: .8; transform: translate(0,0) scale(1); }
+.iridescent:hover::after,
+.iridescent:focus-visible::after,
+.iridescent.shine::after{ opacity: .8; }
+.iridescent:focus-visible{
+  box-shadow:
+    0 0 0 2px #fff,
+    0 0 0 6px rgba(223,48,229,.35),
+    inset -0.35em -0.35em 0.25em -0.25em oklch(0.99 0.02 257),
+    inset -0.33em -1em 0.75em -0.75em oklch(0.99 0.01 257);
+  outline: none;
+}
 
 /* ========== 3) HERO ========== */
 .hero{
   position: relative;
   min-height: 100vh;
   display: grid; align-items: center;
-  padding: calc(var(--nav-h) + 48px) 24px 56px; /* space for fixed nav */
+  padding: calc(var(--nav-h) + 48px) 24px 56px;
   overflow: clip;
 }
 .hero::after{
-    /* pink band at bottom */
   content: "";
   position: absolute;
   left: 50%;
   bottom: 0;
   transform: translateX(-50%);
-  width: 140vw;              /* wider than screen so it fills edge-to-edge */
-  height: 80vh;              /* how tall the pink band is */
+  width: 140vw;
+  height: 80vh;
   background: radial-gradient(
-      75vw 60vh at 50% 120%, /* big ellipse anchored at bottom center */
+      75vw 60vh at 50% 120%,
       rgba(223, 87, 180, 0.85),
       rgba(214, 130, 214, 0.718) 45%,
       transparent 75%
   );
-  filter: blur(40px);        /* soft edges */
+  filter: blur(40px);
   animation: band-drift 16s ease-in-out infinite alternate;
   z-index: 0;
 }
@@ -101,8 +177,6 @@ body{
   from { transform: translateX(-52%); }
   to   { transform: translateX(-48%); }
 }
-
-
 
 .container{ max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
 .grid{ display: grid; grid-template-columns: 1fr 520px; align-items: center; gap: 24px; }
@@ -131,8 +205,6 @@ body{
   bottom: -20%; right: 100%;
   animation: float-1 15s ease-in-out infinite alternate;
 }
-
-
 .sphere-3{
   width: 30vw; height: 30vw;
   background: linear-gradient(120deg, rgba(249, 89, 255, 0.843), rgba(253, 29, 245, 0.3));
@@ -172,16 +244,10 @@ body{
   .sphere-1, .sphere-2, .sphere-3, .glow { animation: none !important; }
 }
 
-/* ========== 7) RESPONSIVE ========== */
-@media (max-width: 500px){
-  .grid{ grid-template-columns: 1fr; gap: 40px; }
-  .hero::after{
-    width: 100vw; inset: auto 0 0 0; height: 48vh;
-    clip-path: polygon(0 18%, 100% 0, 100% 100%, 0 100%);
-  }
-}
+/* ========== 7) RESPONSIVE BREAKPOINTS ========== */
+/* Phones ≤640px */
 @media (max-width: 640px){
-  :root{ --nav-h: 100px; }          /* smaller navbar on phones */
+  :root{ --nav-h: 88px; } /* smaller navbar */
 }
 
 /* --- NAV + LOGO: single source of truth --- */
@@ -208,9 +274,6 @@ margin-bottom : -30px;
 @media (max-width: 640px){
   :root{ --nav-h: 100px; }
 }
-
-
-
 
 /* put the iridescent button on the right side of the nav */
 .nav .iridescent{
@@ -268,7 +331,7 @@ margin-bottom : -30px;
     oklch(0.35 0.1 257 / 0.1)  0px 0.05em 0.1em  0px;
 }
 
-/* inner “glassy glow” */
+/* inner "glassy glow" */
 .iridescent::after{
   content:"";
   position:absolute;
@@ -342,6 +405,7 @@ margin-bottom : -30px;
     inset -0.33em -1em 0.75em -0.75em oklch(0.99 0.01 257);
   outline: none;
 }
+
 /* Hover effect for product image */
 .product-img {
   width: min(90%, 520px);
