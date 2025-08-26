@@ -342,3 +342,55 @@ margin-bottom : -30px;
     inset -0.33em -1em 0.75em -0.75em oklch(0.99 0.01 257);
   outline: none;
 }
+
+/* make the glass button sit on the right in the navbar */
+.nav .glass { margin-left: auto; text-decoration: none; }
+
+/* the glass button wrapper (size it like your old cart/button) */
+.nav .glass .liquidGlass-wrapper{
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 44px;               /* button height */
+  padding: 0 18px;            /* left/right space */
+  border-radius: 9999px;
+
+  font-family: "Amaranth", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #050404b6;
+
+  box-shadow: 0 6px 6px rgba(0,0,0,0.2), 0 0 20px rgba(0,0,0,0.1);
+  transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
+  overflow: hidden;           /* hide inner edges */
+}
+
+/* the 3 layers that make the “glass” */
+.nav .glass .liquidGlass-effect{
+  position: absolute; inset: 0; z-index: 0;
+  backdrop-filter: blur(1px);
+  filter: url(#glass-distortion);   /* uses the SVG filter you added */
+  isolation: isolate;
+}
+.nav .glass .liquidGlass-tint{
+  position: absolute; inset: 0; z-index: 1;
+  background: rgba(255,255,255,0.35);
+}
+.nav .glass .liquidGlass-shine{
+  position: absolute; inset: 0; z-index: 2;
+  box-shadow: inset 2px 2px 1px rgba(255,255,255,0.55),
+              inset -1px -1px 1px rgba(255,255,255,0.45);
+}
+
+/* the label stays on top */
+.nav .glass .liquidGlass-text{ position: relative; z-index: 3; }
+
+/* hover/focus feel */
+.nav .glass:hover .liquidGlass-wrapper,
+.nav .glass:focus-visible .liquidGlass-wrapper{
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.18);
+}
+.nav .glass:focus-visible { outline: none; }
