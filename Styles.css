@@ -416,28 +416,18 @@ margin-bottom : -30px;
 .nav .glass:focus-visible { outline: none; }
 
 
-/* ===== MOBILE (<= 640px) – single source of truth ===== */
+/* ===== MOBILE TUNE-UP (<= 640px) ===== */
 @media (max-width: 640px){
 
-  /* nav + safe area */
-  :root{ --nav-h: 96px; }
+  /* smaller navbar + safe-area padding for iOS/Instagram browser */
+  :root{ --nav-h: 88px; }
   .nav{
-    padding-left:  max(14px, env(safe-area-inset-left));
-    padding-right: max(14px, env(safe-area-inset-right));
+    padding-left:  max(12px, env(safe-area-inset-left));
+    padding-right: max(12px, env(safe-area-inset-right));
   }
-  .nav .inner{ gap: 12px; }
+  .logo img{ height: calc(var(--nav-h) - 18px); }
 
-  /* logo */
-  .logo{ margin-left: 0; }
-   /* logo */ 
-   .logo{ margin-left: 0; } 
-   .logo img{ height: calc(var(--nav-h) - 20px); 
-    max-width: 42vw; 
-    width: auto;
-  }
-  }
-
-  /* PRE ORDER button */
+  /* make PRE ORDER comfy on phones */
   .nav .iridescent{
     margin-left: auto;
     height: 36px;
@@ -445,28 +435,26 @@ margin-bottom : -30px;
     padding: 0 14px;
     border-radius: 9999px;
   }
-  .nav a.iridescent{ text-decoration: none; }
 
-  /* hero layout + type */
-  .hero{ padding: calc(var(--nav-h) + 20px) 16px 32px; }
-  .grid{ grid-template-columns: 1fr; gap: 18px; }
-  .eyebrow{ font-size: 12px; letter-spacing: .2em; }
-  .title{ font-size: clamp(34px, 14vw, 52px); }
+  /* hero spacing + single column */
+  .hero{ padding: calc(var(--nav-h) + 24px) 16px 32px; }
+  .grid{ grid-template-columns: 1fr; gap: 20px; }
+  .title{ font-size: clamp(36px, 16vw, 56px); }
   .subtitle{ font-size: 15px; max-width: 32ch; }
 
-  /* lighter effects on phones */
-  .sphere-1, .sphere-3, .grid-overlay, .noise-overlay{ display: none !important; }
+  /* hide heavy decorative layers on small screens */
+  .sphere-1, .sphere-3, .grid-overlay, .noise-overlay{ display: none; }
 
-  /* bottom pink band sized for mobile */
+  /* bottom pink band – sized for mobile */
   .hero::after{
-    width: 170vw;
-    height: 44vh;
+    width: 180vw;
+    height: 42vh;
     background: radial-gradient(
-      105vw 52vh at 50% 116%,
-      rgba(223, 87, 180, 0.92),
-      rgba(214, 130, 214, 0.55) 45%,
+      100vw 50vh at 50% 115%,
+      rgba(223, 87, 180, 0.9),
+      rgba(214, 130, 214, 0.6) 45%,
       transparent 80%
     );
     filter: blur(32px);
   }
-
+}
