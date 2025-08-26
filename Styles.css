@@ -342,3 +342,23 @@ margin-bottom : -30px;
     inset -0.33em -1em 0.75em -0.75em oklch(0.99 0.01 257);
   outline: none;
 }
+/* Hover effect for product image */
+.product-img {
+  width: min(90%, 520px);
+  height: auto;
+  display: block;
+  transition: transform 0.4s ease, filter 0.4s ease;
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.25));
+}
+
+.product-img:hover {
+  transform: scale(1.08) translateY(-8px) rotate(-2deg);
+  filter: drop-shadow(0 20px 32px rgba(0, 0, 0, 0.35));
+  cursor: pointer;
+}
+.eyebrow {
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  font-size: .99rem;
+  color: var(--muted);
+}
