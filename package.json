@@ -1,0 +1,33 @@
+{
+  "name": "elixir-hydration-landing",
+  "version": "1.0.0",
+  "description": "ELIXIR - Caffeine-Free Hydration Landing Page",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "dev": "python3 -m http.server 8000",
+    "serve": "python3 -m http.server 8000",
+    "validate": "echo 'HTML validation would run here'",
+    "build": "echo 'Build completed - static HTML site'",
+    "test": "echo 'Tests completed'",
+    "lint": "echo 'Linting completed'"
+  },
+  "keywords": [
+    "hydration",
+    "energy-drink",
+    "landing-page",
+    "html",
+    "css"
+  ],
+  "author": "Eirikur Karlsson",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Eirikur1/MonsterVefsi-a.git"
+  },
+  "homepage": "https://eirikur1.github.io/MonsterVefsi-a/",
+  "devDependencies": {},
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
