@@ -420,7 +420,7 @@ margin-bottom : -30px;
 @media (max-width: 640px){
 
   /* nav + safe area */
-  :root{ --nav-h: 88px; }
+  :root{ --nav-h: 96px; }
   .nav{
     padding-left:  max(14px, env(safe-area-inset-left));
     padding-right: max(14px, env(safe-area-inset-right));
@@ -429,10 +429,12 @@ margin-bottom : -30px;
 
   /* logo */
   .logo{ margin-left: 0; }
-  .logo img{
-    height: calc(var(--nav-h) - 20px);
-    max-width: 42vw;
+   .logo img{
+    height: calc(var(--nav-h) - 12px); /* bigger than your -20px */
+    max-width: clamp(140px, 48vw, 220px);
     width: auto;
+    transform: translateY(-4px); /* move up a little */
+  }
   }
 
   /* PRE ORDER button */
