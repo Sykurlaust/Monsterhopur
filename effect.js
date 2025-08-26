@@ -69,3 +69,11 @@ document.addEventListener('mousemove', (e) => {
 
   // Removed: writing to .gradient-sphere transform (keeps keyframe motion alive)
 });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.querySelector('.nav .iridescent');
+  if (!btn) return;
+  setTimeout(() => btn.classList.add('shine'), 800);
+  setTimeout(() => btn.classList.remove('shine'), 3000);
+});
