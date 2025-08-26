@@ -429,11 +429,11 @@ margin-bottom : -30px;
 
   /* logo */
   .logo{ margin-left: 0; }
-   .logo img{
-    height: calc(var(--nav-h) - 12px); /* bigger than your -20px */
-    max-width: clamp(140px, 48vw, 220px);
+   /* logo */ 
+   .logo{ margin-left: 0; } 
+   .logo img{ height: calc(var(--nav-h) - 20px); 
+    max-width: 42vw; 
     width: auto;
-    transform: translateY(-4px); /* move up a little */
   }
   }
 
