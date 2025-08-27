@@ -13,21 +13,23 @@
   <link rel="stylesheet" href="Styles.css">
 </head>
 <body class="preorder">
-  <!-- ===== NAVBAR ===== -->
-  <header class="nav" role="banner">
-    <div class="inner">
-      <!-- Logo -->
-      <a class="logo" href="#home" aria-label="Home">
-        <img src="img/monsterlogomynd.png" alt="Monster Energy logo">
-      </a>
 
-      <!-- Back to home button -->
-      <a href="index.html" class="iridescent">
-        Back to home
-        <span class="drop-shadow"></span>
-      </a>
+ <!-- ===== NAVBAR ===== -->
+<header class="nav" role="banner">
+  <div class="inner">
+    <!-- Logo -->
+    <a class="logo" href="index.html" aria-label="Home">
+      <img src="img/monsterlogomynd.png" alt="Monster Energy logo">
+    </a>
+    
+
+    <!-- Navigation Buttons -->
+    <div class="button-group">
+      <a href="preorder.html" class="apple-btn apple-btn--active">Ultra Energy</a>
+      <a href="hviturmonster.html" class="apple-btn">Ultra Strawberry</a>
     </div>
-  </header>
+    
+</header>
 
   <!-- ===== HERO ===== -->
   <main class="hero" id="home">
@@ -39,27 +41,25 @@
     </div>
 
     <div class="container">
-      <div class="grid">
-        <!-- Copy -->
+      <div class="hero-grid">
+        <!-- Left: Copy -->
         <section class="copy" aria-labelledby="hero-title">
-          <p class="eyebrow">Pre order</p>
-          <h1 id="hero-title" class="title">Monster Energy Ultra</h1>
+          <p class="eyebrow">PRE ORDER</p>
+          <h1 id="hero-title" class="hero-title">MONSTER ULTRA ENERGY</h1>
+          <p class="hero-subcopy">
+            Experience the ultimate energy boost with our premium Ultra Energy drink.<br>
+            Zero sugar, maximum power, and unmatched refreshment.
+          </p>
         </section>
 
-        <!-- Product image -->
-        <figure class="product">
+        <!-- Right: Product image -->
+        <aside class="image-stack" aria-label="Product image">
           <img
-            class="product-img"
-            alt="Energy drink can"
+            class="can-img"
+            alt="Monster Ultra Energy drink can"
             src="img/monster-energy-sports-energy-drinks-fizzy-drinks-lucozade-sugar-7a3f89afb5dabef07e33f3e61e2c0383.png"
-            srcset="
-              img/monster-energy-sports-energy-drinks-fizzy-drinks-lucozade-sugar-7a3f89afb5dabef07e33f3e61e2c0383.png 400w,
-              img/monster-energy-sports-energy-drinks-fizzy-drinks-lucozade-sugar-7a3f89afb5dabef07e33f3e61e2c0383.png 800w,
-              img/monster-energy-sports-energy-drinks-fizzy-drinks-lucozade-sugar-7a3f89afb5dabef07e33f3e61e2c0383.png 1200w
-            "
-            sizes="(min-width: 768px) 520px, 90vw"
           />
-        </figure>
+        </aside>
       </div>
     </div>
   </main>
@@ -99,6 +99,15 @@
         </li>
       </ul>
     </div>
+    <!-- Legal bar -->
+    <div class="legal-bar">
+      © Monster Energy Company &nbsp;&nbsp; All Rights Reserved &nbsp;&nbsp; 
+      <a href="#">Privacy Policy</a> &nbsp;&nbsp; 
+      <a href="#">Cookies Policy</a> &nbsp;&nbsp; 
+      <a href="#">Terms of Use</a> &nbsp;&nbsp; 
+      <a href="#">Do Not Sell or Share My Personal Information</a>
+    </div>
+  </footer>
   </footer>
 </body>
 </html>
