@@ -522,3 +522,72 @@ margin-bottom : -30px;
     filter: blur(32px);
   }
 }
+
+/* Footer fixed near bottom, transparent, above the gradient */
+.footer{
+  position: fixed;
+  left: 0; right: 0;
+  bottom: max(12px, env(safe-area-inset-bottom));  /* push lower */
+  background: transparent;
+  z-index: 10;            /* gradient is z-index:-1 */
+  pointer-events: none;   /* so only icons are clickable */
+}
+
+/* icons row */
+.footer .social-media-links{
+  background: transparent;
+  overflow: visible;
+  text-align: center;
+}
+
+.footer .social-media-links ul{
+  list-style: none;
+  display: inline-flex;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  pointer-events: auto;   /* re-enable clicks on the icons */
+}
+
+.footer .social-media-links li{ margin: 0; padding: 0; }
+
+.footer .social-media-links a{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px; height: 44px;
+  color: #1f1b1e;                 /* icon color */
+  background: transparent;
+  border: 0; padding: 0;
+  box-shadow: none;
+  transition: transform .2s, color .2s;
+}
+
+.footer .social-media-links a:hover{
+  transform: translateY(-3px);
+  color: #3a3137;
+}
+
+/* Make the SVGs follow link color */
+.footer .social-media-links a svg { width: 28px; height: 28px; }
+.footer .social-media-links a svg path,
+.footer .social-media-links a svg circle { fill: currentColor; }
+
+/* Kill any legacy rules that might hide/clip things */
+.footer .social-media-links, 
+.footer .social-media-links a,
+.footer .social-media-links svg{
+  position: static !important;
+}
+
+/* push the footer lower if you want */
+.footer { bottom: 28px; }
+
+/* Make *every* shape inside the SVG use the link color */
+.footer .social-media-links a svg,
+.footer .social-media-links a svg *{
+  fill: currentColor !important;
+  stroke: currentColor !important;
+}
+
+
