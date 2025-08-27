@@ -314,7 +314,7 @@ body{
 
 .can-img{
   width: 100%;
-  max-width: 520px;
+  max-width: 700px;
   height: auto;
   display: block;
   filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.25));
@@ -325,6 +325,13 @@ body{
   transform: translateY(-8px) scale(1.04);
   filter: drop-shadow(0 20px 32px rgba(0, 0, 0, 0.35));
   cursor: pointer;
+}
+
+/* Specific styling for Ultra Strawberry image to match size */
+.can-img[src*="TveirBleikir"]{
+  max-width: 520px;
+  width: 100%;
+  object-fit: contain;
 }
 
 .baseline{ 
@@ -603,8 +610,8 @@ body{
   background: radial-gradient(circle, rgba(59, 130, 246, 0.18), transparent 70%);
 }
 
-/* Hviturmonster page (pink theme) */
-body.preorder .hero::after{
+/* Ultra Strawberry page (pink theme) */
+.ultrastrawberry .hero::after{
   background: radial-gradient(
     75vw 60vh at 50% 120%,
     rgba(236, 72, 153, 0.85),
@@ -613,7 +620,7 @@ body.preorder .hero::after{
   );
 }
 
-body.preorder .glow{
+.ultrastrawberry .glow{
   background: radial-gradient(circle, rgba(236, 72, 153, 0.18), transparent 70%);
 }
 
