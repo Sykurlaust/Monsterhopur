@@ -164,10 +164,10 @@ body{
   width: 140vw;
   height: 80vh;
   background: radial-gradient(
-      75vw 60vh at 50% 120%,
-      rgba(223, 87, 180, 0.85),
-      rgba(214, 130, 214, 0.718) 45%,
-      transparent 75%
+    75vw 60vh at 50% 120%,
+    rgba(223, 87, 180, 0.85),
+    rgba(214, 130, 214, 0.718) 45%,
+    transparent 75%
   );
   filter: blur(40px);
   animation: band-drift 16s ease-in-out infinite alternate;
@@ -252,12 +252,11 @@ body{
 
 /* --- NAV + LOGO: single source of truth --- */
 .logo { 
-    height: var(--nav-h);
-margin-left: -6px;
-margin-inline-start: -25px;
-margin-bottom : -30px;
- }
-
+  height: var(--nav-h);
+  margin-left: -6px;
+  margin-inline-start: -25px;
+  margin-bottom: -30px;
+}
 .logo img{
   display: block;
   width: auto;
@@ -276,9 +275,7 @@ margin-bottom : -30px;
 }
 
 /* put the iridescent button on the right side of the nav */
-.nav .iridescent{
-  margin-left: auto;             /* pushes it to the right */
-}
+.nav .iridescent{ margin-left: auto; }
 
 /* size for navbar (not giant) */
 .nav .iridescent{
@@ -377,7 +374,7 @@ margin-bottom : -30px;
   transition: opacity .6s ease, transform .6s ease, scale .6s ease;
 }
 
-/* hover/focus/shine */
+/* hover/focus feel */
 .iridescent:hover,
 .iridescent:focus-visible,
 .iridescent.shine{
@@ -414,7 +411,6 @@ margin-bottom : -30px;
   transition: transform 0.4s ease, filter 0.4s ease;
   filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.25));
 }
-
 .product-img:hover {
   transform: scale(1.08) translateY(-8px) rotate(-2deg);
   filter: drop-shadow(0 20px 32px rgba(0, 0, 0, 0.35));
@@ -436,26 +432,23 @@ margin-bottom : -30px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
-  height: 44px;               /* button height */
-  padding: 0 18px;            /* left/right space */
+  height: 44px;
+  padding: 0 18px;
   border-radius: 9999px;
-
   font-family: "Amaranth", sans-serif;
   font-size: 16px;
   font-weight: 700;
   color: #050404b6;
-
   box-shadow: 0 6px 6px rgba(0,0,0,0.2), 0 0 20px rgba(0,0,0,0.1);
   transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
-  overflow: hidden;           /* hide inner edges */
+  overflow: hidden;
 }
 
 /* the 3 layers that make the "glass" */
 .nav .glass .liquidGlass-effect{
   position: absolute; inset: 0; z-index: 0;
   backdrop-filter: blur(1px);
-  filter: url(#glass-distortion);   /* uses the SVG filter you added */
+  filter: url(#glass-distortion);
   isolation: isolate;
 }
 .nav .glass .liquidGlass-tint{
@@ -479,10 +472,8 @@ margin-bottom : -30px;
 }
 .nav .glass:focus-visible { outline: none; }
 
-
 /* ===== MOBILE TUNE-UP (<= 640px) ===== */
 @media (max-width: 640px){
-
   /* smaller navbar + safe-area padding for iOS/Instagram browser */
   :root{ --nav-h: 88px; }
   .nav{
@@ -527,10 +518,10 @@ margin-bottom : -30px;
 .footer{
   position: fixed;
   left: 0; right: 0;
-  bottom: max(12px, env(safe-area-inset-bottom));  /* push lower */
+  bottom: max(12px, env(safe-area-inset-bottom));
   background: transparent;
-  z-index: 10;            /* gradient is z-index:-1 */
-  pointer-events: none;   /* so only icons are clickable */
+  z-index: 10;
+  pointer-events: none;
 }
 
 /* icons row */
@@ -539,30 +530,26 @@ margin-bottom : -30px;
   overflow: visible;
   text-align: center;
 }
-
 .footer .social-media-links ul{
   list-style: none;
   display: inline-flex;
   gap: 24px;
   margin: 0;
   padding: 0;
-  pointer-events: auto;   /* re-enable clicks on the icons */
+  pointer-events: auto;
 }
-
 .footer .social-media-links li{ margin: 0; padding: 0; }
-
 .footer .social-media-links a{
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 44px; height: 44px;
-  color: #1f1b1e;                 /* icon color */
+  color: #1f1b1e;
   background: transparent;
   border: 0; padding: 0;
   box-shadow: none;
   transition: transform .2s, color .2s;
 }
-
 .footer .social-media-links a:hover{
   transform: translateY(-3px);
   color: #3a3137;
@@ -589,5 +576,11 @@ margin-bottom : -30px;
   fill: currentColor !important;
   stroke: currentColor !important;
 }
-
-
+.footer .social-media-links a svg circle{
+  fill: none !important;
+  stroke-width: 2 !important;
+}
+/* ===== Preorder page tweaks (scoped to body.preorder) ===== */
+.preorder .product-img{
+  width: min(80%, 420px);
+}
