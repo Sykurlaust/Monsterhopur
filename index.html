@@ -11,87 +11,79 @@
 
   <!-- Styles -->
   <link rel="stylesheet" href="Styles.css">
-  
 </head>
 <body class="index-page">
 
-
- <!-- ===== NAVBAR ===== -->
-<header class="nav" role="banner">
+  <!-- ===== NAVBAR ===== -->
+  <header class="nav" role="banner">
   <div class="inner">
-    <!-- Logo -->
     <a class="logo" href="index.html" aria-label="Home">
       <img src="img/monsterlogomynd.png" alt="Monster Energy logo">
     </a>
 
-    <!-- Navigation Buttons -->
     <div class="button-group">
-      <a href="preorder.html" class="apple-btn apple-btn--active">Ultra Energy</a>
-      <a href="ultrastrawberry.html" class="apple-btn">Ultra Strawberry</a>
+      <a href="preorder.html" class="iridescent nav-btn is-active">
+        Ultra Energy
+        <span class="drop-shadow"></span>
+      </a>
+      <a href="ultrastrawberry.html" class="iridescent nav-btn">
+        Ultra Strawberry
+        <span class="drop-shadow"></span>
+      </a>
     </div>
-    
+  </div>  <!-- ✅ close .inner -->
 </header>
 
-<!-- ===== HERO ===== -->
-<main class="hero" id="home">
-  <!-- Decorative background -->
-  <div class="bg-effects" aria-hidden="true">
-    <div class="gradient-sphere sphere-2"></div>
-    <div class="glow"></div>
-    <div id="particles-container" class="particles-container"></div>
-  </div>
 
-  <div class="container">
-    <div class="grid hero-grid">
-      <!-- Left: headline and subcopy -->
-      <section class="copy">
-        <h1 class="hero-title">Unleash the Ultra<br>Beast!</h1>
-        <p class="hero-subcopy">
-          Tear into a can of the meanest energy drink on the planet,
-          Monster Energy.
-        </p>
-      </section>
-    
-      <!-- Right: two cans overlapped and angled -->
-      <aside class="image-stack" aria-label="Product image">
-        <img src="img/Untitled (3).png" alt="Monster Ultra can" class="can-img">
-      </aside>
-      
+  <!-- ===== HERO ===== -->
+  <main class="hero" id="home">
+    <!-- Decorative background -->
+    <div class="bg-effects" aria-hidden="true">
+      <div class="gradient-sphere sphere-2"></div>
+      <div class="glow"></div>
+      <div id="particles-container" class="particles-container"></div>
+    </div>
+
+    <div class="container">
+      <div class="grid hero-grid">
+        <!-- Left: headline and subcopy -->
+        <section class="copy">
+          <h1 class="hero-title">Unleash the Ultra<br>Beast!</h1>
+          <p class="hero-subcopy">
+            Tear into a can of the meanest energy drink on the planet,
+            Monster Energy.
+          </p>
+        </section>
+
+        <!-- Right: product image -->
+        <aside class="image-stack" aria-label="Product image">
+          <img src="img/Untitled (3).png" alt="Monster Ultra can" class="can-img">
+        </aside>
+      </div>
+    </div>
+  </main>
+
   <!-- Baseline accent -->
   <div class="baseline" aria-hidden="true"></div>
 
   <!-- Scripts -->
   <script src="effect.js" defer></script>
 
+  <!-- ===== FOOTER ===== -->
   <footer class="footer">
     <div class="social-media-links">
       <ul>
-        <!-- Twitter -->
         <li>
-          <a
-            class="glass-icon"
-            href="https://x.com/MonsterEnergy"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Twitter"
-            title="Monster Energy on X (Twitter)"
-          >
+          <a class="glass-icon" href="https://x.com/MonsterEnergy" target="_blank" rel="noopener noreferrer"
+             aria-label="Twitter" title="Monster Energy on X (Twitter)">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path d="M22 5.8c-.7.3-1.4.5-2.2.6.8-.5 1.3-1.2 1.6-2.1-.7.4-1.6.8-2.5 1A3.7 3.7 0 0 0 12 8.5c0 .3 0 .6.1.9-3-.1-5.7-1.6-7.5-3.9-.3.6-.5 1.2-.5 1.9 0 1.3.6 2.5 1.6 3.2-.6 0-1.2-.2-1.7-.5v.1c0 1.8 1.3 3.3 3 3.6-.3.1-.7.1-1 .1-.2 0-.5 0-.7-.1.5 1.5 1.9 2.5 3.6 2.6A7.5 7.5 0 0 1 2 18c1.7 1.1 3.8 1.7 6 1.7 7.2 0 11.2-6 11.2-11.2v-.5c.8-.6 1.4-1.3 1.8-2.2Z"/>
             </svg>
           </a>
         </li>
-
-        <!-- Facebook -->
         <li>
-          <a
-            class="glass-icon"
-            href="https://www.facebook.com/MonsterEnergy/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Facebook"
-            title="Monster Energy on Facebook"
-          >
+          <a class="glass-icon" href="https://www.facebook.com/MonsterEnergy/" target="_blank" rel="noopener noreferrer"
+             aria-label="Facebook" title="Monster Energy on Facebook">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path d="M22 12a10 10 0 1 0-11.6 9.9v-7h-2.2V12h2.2V9.7c0-2.2 1.3-3.4 3.3-3.4.9 0 1.8.2 1.8.2v2h-1c-1 0-1.4.6-1.4 1.3V12h2.4l-.4 2.9h-2v7A10 10 0 0 0 22 12Z"/>
             </svg>
@@ -100,16 +92,13 @@
       </ul>
     </div>
 
-    <!-- Legal bar -->
     <div class="legal-bar">
-      © Monster Energy Company &nbsp;&nbsp; All Rights Reserved &nbsp;&nbsp; 
-      <a href="#">Privacy Policy</a> &nbsp;&nbsp; 
-      <a href="#">Cookies Policy</a> &nbsp;&nbsp; 
-      <a href="#">Terms of Use</a> &nbsp;&nbsp; 
+      © Monster Energy Company &nbsp;&nbsp; All Rights Reserved &nbsp;&nbsp;
+      <a href="#">Privacy Policy</a> &nbsp;&nbsp;
+      <a href="#">Cookies Policy</a> &nbsp;&nbsp;
+      <a href="#">Terms of Use</a> &nbsp;&nbsp;
       <a href="#">Do Not Sell or Share My Personal Information</a>
     </div>
   </footer>
-
-
 </body>
 </html>
