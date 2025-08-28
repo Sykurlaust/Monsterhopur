@@ -1,0 +1,5 @@
+[33m0b754b1[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Add GitHub Pages deployment workflow
+[33m79f5822[m Updated image references and sizing - Renamed hviturmonster.html to ultrastrawberry.html - Changed MonsterBleikur.png to TveirBleikir.png - Changed monster-energy image to Tveirhvitir.png - Fixed color themes (preorder=blue, ultrastrawberry=pink) - Increased index page image size to 700px - Updated all navigation links and CSS selectors
+[33m653b6d0[m Complete website redesign with modern navigation and consistent styling - Added sleek glass morphism navigation buttons with blue/pink hover effects - Updated all pages with consistent layout and typography - Improved responsive design and accessibility - Added page-specific color themes (green for index, blue for preorder, pink for hviturmonster) - Enhanced visual hierarchy and spacing throughout
+[33m5b7f3fd[m fixing the preoder.html structuree like the index file
+[33m67699ac[m new button social delete instagram
