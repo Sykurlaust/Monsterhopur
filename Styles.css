@@ -421,7 +421,7 @@ header.nav .logo img{
     width: auto;
     position: relative;
     top: 15px;   /* your vertical nudge */
-    right: 15px; /* your horizontal nudge */
+    right: 95px; /* your horizontal nudge */
     object-fit: contain;
   }
 }
@@ -432,3 +432,47 @@ header.nav .logo img{
     right: 0;
   }
 }
+
+
+/* === Layout breathing room (desktop only) === */
+@media (min-width: 1200px){
+  /* Give the page a wider stage */
+  .container{
+    max-width: 1360px;           /* was 1200px */
+  }
+
+  /* Add extra space above the fixed footer so it sits farther from cans/text */
+  .hero{
+    padding-bottom: calc(var(--space-2xl) + 200px); /* +200px breathing room */
+  }
+
+  /* Keep the two-column layout comfortable at the wider width */
+  .hero-grid{
+    grid-template-columns: 1.2fr 620px;  /* a touch more space for the copy + stable image column */
+    gap: var(--space-2xl);
+  }
+
+  /* Optional: ensure the can image scales nicely within the wider column */
+  .can-img{
+    max-width: 620px;  /* adjust if you want the can a bit larger/smaller */
+  }
+}
+
+/* Nudge footer closer to the very bottom edge so the gap ABOVE it is larger */
+.footer{
+  bottom: max(8px, env(safe-area-inset-bottom)); /* was 12px */
+}
+
+
+/* FRONT PAGE ONLY: top-align the headline with the cans */
+@media (min-width: 900px){
+  .index-page .hero-grid{
+    align-items: start;      /* top edges align */
+  }
+  .index-page .copy{
+    padding-top: 100px;       /* fine-tune: 0–40px; adjust to taste */
+  }
+}
+
+
+
