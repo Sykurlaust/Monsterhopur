@@ -4,14 +4,19 @@ on:
   push:
     branches: [ main ]
 
+permissions:
+  contents: write   # needed so the workflow can push to gh-pages
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: .
+      - uses: actions/checkout@v4
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: .          # change if your site builds to /dist or /build
+          force_orphan: true
